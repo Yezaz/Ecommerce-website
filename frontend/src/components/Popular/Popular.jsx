@@ -5,7 +5,7 @@ export const Popular = () => {
   const [popularproducts, setpopularproducts] = useState([]);
 
   useEffect(()=>{
-    fetch('http://localhost:4000/popularinwomen')
+    fetch('ecommerce-website-backend-ecru.vercel.app/popularinwomen')
     .then((response)=>response.json())
     .then ((data)=>setpopularproducts(data));
   },[])
