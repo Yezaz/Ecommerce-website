@@ -5,7 +5,7 @@ export const Newcollections = () => {
 
   const [new_collection,setnewcollection]=useState([]);
   useEffect(()=>{
-    fetch('ecommerce-website-backend-ecru.vercel.app/newcollection')
+    fetch('https://ecommerce-website-backend-ecru.vercel.app//newcollection')
     .then((res)=>res.json()).then((data)=>setnewcollection(data));
   },[])
   return (
