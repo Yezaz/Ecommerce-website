@@ -18,10 +18,10 @@ const Shopcontextprovider = (props)=>{
     const[all_product,setall_product]=useState([]);
     const [cartitem,setcartitem] =useState(getDefaultCart());
     useEffect(()=>{
-        fetch('http://localhost:4000/allproducts').then((res)=>res.json())
+        fetch('https://ecommerce-website-backend-ecru.vercel.app//allproducts').then((res)=>res.json())
         .then((data)=>setall_product(data))
         if(localStorage.getItem('auth-token')){
-            fetch('http://localhost:4000/getcart',{
+            fetch('https://ecommerce-website-backend-ecru.vercel.app/getcart',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -36,7 +36,7 @@ const Shopcontextprovider = (props)=>{
     const addtocart = (itemId)=>{
         setcartitem((prev)=>({...prev,[itemId]:prev[itemId]+1}));
         if(localStorage.getItem('auth-token')){
-            fetch('http://localhost:4000/addtocart',{
+            fetch('https://ecommerce-website-backend-ecru.vercel.app/addtocart',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -52,7 +52,7 @@ const Shopcontextprovider = (props)=>{
     const removefromcart = (itemId)=>{
         setcartitem((prev)=>({...prev,[itemId]:prev[itemId]-1}))// frontend
         if(localStorage.getItem('auth-token')){ //bckend
-            fetch('http://localhost:4000/removefromcart',{
+            fetch('https://ecommerce-website-backend-ecru.vercel.app/',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
