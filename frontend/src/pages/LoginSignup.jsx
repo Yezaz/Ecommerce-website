@@ -20,7 +20,7 @@ export default function LoginSignup() {
   // Functions for login and signup which link to the backend
   const login = async () => {
     let responseData;
-    await fetch('http://localhost:4000/login', {
+    await fetch('https://ecommerce-website-backend-ecru.vercel.app//login', {
       method: 'POST',
       headers: {
         Accept: 'application/form-data',
@@ -42,7 +42,7 @@ export default function LoginSignup() {
 
   const signup = async () => {
     let responseData;
-    await fetch('http://localhost:4000/signup', {
+    await fetch('https://ecommerce-website-backend-ecru.vercel.app//signup', {
       method: 'POST',
       headers: {
         Accept: 'application/form-data',
