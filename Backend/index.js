@@ -9,7 +9,12 @@ const jwt = require('jsonwebtoken');
 const { error } = require('console');
 
 app.use(express.json()); // Automatically parses JSON request bodies
-app.use(cors()); // Enable CORS for all routes
+app.use(cors(
+  {
+    origin:["https://ecommerce-website-frontend-inky.vercel.app/"],
+    methods:["POST","GET"],
+    credentials:true
+  } // Enable CORS for all routes
 
 // Database connection with MongoDB
 mongoose.connect("mongodb+srv://yezaz:1208@cluster0.r4a6jvq.mongodb.net/e-commerce?retryWrites=true&w=majority", {
