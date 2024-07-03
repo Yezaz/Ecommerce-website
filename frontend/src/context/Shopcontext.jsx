@@ -18,7 +18,7 @@ const Shopcontextprovider = (props)=>{
     const[all_product,setall_product]=useState([]);
     const [cartitem,setcartitem] =useState(getDefaultCart());
     useEffect(()=>{
-        fetch('https://ecommerce-website-backend-ecru.vercel.app//allproducts').then((res)=>res.json())
+        fetch('https://ecommerce-website-backend-ecru.vercel.app/allproducts').then((res)=>res.json())
         .then((data)=>setall_product(data))
         if(localStorage.getItem('auth-token')){
             fetch('https://ecommerce-website-backend-ecru.vercel.app/getcart',{
