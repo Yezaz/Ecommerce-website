@@ -27,7 +27,7 @@ const Addproduct = () => {
         let formdata = new FormData();
         formdata.append('product',image);
 
-        await fetch('http://localhost:4000/upload',{
+        await fetch('https://ecommerce-website-backend-ecru.vercel.app/upload',{
             method:'POST',
             headers :{
                 Accept:'application/json',
@@ -40,7 +40,7 @@ const Addproduct = () => {
             {
                 product.image = responsedata.image_url;
                 console.log(product);
-                await fetch('http://localhost:4000/addproduct',{
+                await fetch('https://ecommerce-website-backend-ecru.vercel.app/addproduct',{
                     method:'POST',
                     headers:{
                         Accept:'application/json',
