@@ -7,7 +7,7 @@ const Listproduct = () => {
 
   const fetchinfo = async () => {
     try {
-      const res = await fetch('http://localhost:4000/allproducts');
+      const res = await fetch('https://ecommerce-website-backend-ecru.vercel.app/allproducts');
       const data = await res.json();
       setallproducts(data);
     } catch (error) {
@@ -19,7 +19,7 @@ const Listproduct = () => {
     fetchinfo();
   }, []);
   const remove_product = async(id)=>{
-    await fetch('http://localhost:4000/removeproduct',{
+    await fetch('https://ecommerce-website-backend-ecru.vercel.app/removeproduct',{
       method:'POST',
       headers:{
         Accept:'application/json',
